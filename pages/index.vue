@@ -11,7 +11,7 @@
         title: "NuxtFlix | Home",
         meta: [
             {
-                name: "description", content: "NuxtFlix it's a student project to lean Nuxt and Vue"
+                name: "description", content: "NuxtFlix it's a student project to learn Nuxt and Vue"
             }
         ]
     })
