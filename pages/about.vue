@@ -51,8 +51,15 @@
     </div>
 </template>
 
-<script setup>
-
+<script setup lang="ts">
+    useHead({
+        title: "NuxtFlix | About",
+        meta: [
+            {
+                name: "description", content: "NuxtFlix about page"
+            }
+        ]
+    })
 </script>
 
 <style>

@@ -71,3 +71,14 @@
         </div>
     </section>
 </template>
+
+<script setup lang="ts">
+    useHead({
+        title: "NuxtFlix | Contact",
+        meta: [
+            {
+                name: "description", content: "NuxtFlix contact page"
+            }
+        ]
+    })
+</script>

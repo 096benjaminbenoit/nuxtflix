@@ -12,7 +12,7 @@
                         <button href="#" type="submit" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Details</button>
                     </div>
                 </div>
-                <span class="absolute top-2 right-2 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-gray-900 rounded-full w-10 h-10 border border-white">{{ movie.vote_average.toFixed(2) }}</span>
+                <span class="hidden absolute top-2 right-2 sm:inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-gray-900 rounded-full w-10 h-10 border border-white">{{ movie.vote_average.toFixed(2) }}</span>
             </div>
         </NuxtLink>
     </div>

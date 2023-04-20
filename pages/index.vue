@@ -6,8 +6,15 @@
     </main>
 </template>
 
-<script setup>
-
+<script setup lang="ts">
+    useHead({
+        title: "NuxtFlix | Home",
+        meta: [
+            {
+                name: "description", content: "NuxtFlix it's a student project to lean Nuxt and Vue"
+            }
+        ]
+    })
 </script>
 
 <style>
