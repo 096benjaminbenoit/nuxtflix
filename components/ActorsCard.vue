@@ -1,3 +1,7 @@
+<script setup>
+
+</script>
+
 <template>
     <div v-for="cast in credits.slice(0, 5)">
         <div>
@@ -9,9 +13,6 @@
     </div>
 </template>
 
-<script setup>
-
-</script>
 
 <style scoped>
 

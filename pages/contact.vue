@@ -1,3 +1,14 @@
+  <script setup lang="ts">
+      useHead({
+          title: "NuxtFlix | Contact",
+          meta: [
+              {
+                  name: "description", content: "NuxtFlix contact page"
+              }
+          ]
+      })
+  </script>
+  
 <template>
     <section class="w-screen flex justify-center justify-items-center">
         <div class="flex my-auto justify-center justify-items-center hidden lg:block">
@@ -71,14 +82,3 @@
         </div>
     </section>
 </template>
-
-<script setup lang="ts">
-    useHead({
-        title: "NuxtFlix | Contact",
-        meta: [
-            {
-                name: "description", content: "NuxtFlix contact page"
-            }
-        ]
-    })
-</script>

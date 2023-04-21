@@ -1,3 +1,14 @@
+<script setup lang="ts">
+    useHead({
+        title: "NuxtFlix | About",
+        meta: [
+            {
+                name: "description", content: "NuxtFlix about page"
+            }
+        ]
+    })
+</script>
+
 <template>
     <div class="relative overflow-hidden bg-white lg:pb-20">
         <div class="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
@@ -50,17 +61,6 @@
         </div>
     </div>
 </template>
-
-<script setup lang="ts">
-    useHead({
-        title: "NuxtFlix | About",
-        meta: [
-            {
-                name: "description", content: "NuxtFlix about page"
-            }
-        ]
-    })
-</script>
 
 <style>
 

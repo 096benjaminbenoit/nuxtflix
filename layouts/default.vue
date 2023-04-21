@@ -1,6 +1,3 @@
-
-import { Navbar } from '~/.nuxt/components';
-
 <template>
     <div>
         <Navbar />

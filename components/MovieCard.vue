@@ -1,3 +1,14 @@
+<script setup>
+    const { data: getPopularMovies } = await useFetch(`https://api.themoviedb.org/3/movie/popular?api_key=6dc5c1a78711cf80c5b1fcc9e7340fb9&language=en-US&page=1`)
+    const movies = toRaw(getPopularMovies.value.results)
+        //   console.log(toRaw(movies[0].id))
+
+    function getImageUrl(path) {
+        const baseUrl = 'https://image.tmdb.org/t/p/original';
+        return `${baseUrl}${path}`
+    }
+</script>
+
 <template>
     <div v-for="movie in movies.slice(0, 5)">
         <NuxtLink v-bind:to="`/details/${movie.id}`">
@@ -16,20 +27,7 @@
             </div>
         </NuxtLink>
     </div>
-
 </template>
-
-<script setup>
-    const { data: getPopularMovies } = await useFetch(`https://api.themoviedb.org/3/movie/popular?api_key=6dc5c1a78711cf80c5b1fcc9e7340fb9&language=en-US&page=1
-`)
-    const movies = toRaw(getPopularMovies.value.results)
-        //   console.log(toRaw(movies[0].id))
-
-    function getImageUrl(path) {
-        const baseUrl = 'https://image.tmdb.org/t/p/original';
-        return `${baseUrl}${path}`
-    }
-</script>
 
 <style scoped>
 .card {

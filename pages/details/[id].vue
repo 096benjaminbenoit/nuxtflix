@@ -1,3 +1,18 @@
+<script setup>
+    const route = useRoute();
+    const { data: getDetails } = await useFetch(`https://api.themoviedb.org/3/movie/${route.params.id}?api_key=6dc5c1a78711cf80c5b1fcc9e7340fb9&language=en-US`)
+    const movie = toRaw(getDetails.value)
+
+    const { data: getCredits } = await useFetch(`https://api.themoviedb.org/3/movie/${route.params.id}/credits?api_key=6dc5c1a78711cf80c5b1fcc9e7340fb9&language=en-US`)
+    const credits = toRaw(getCredits.value)
+    console.log(credits.cast)
+
+    function getImageUrl(path) {
+        const baseUrl = 'https://image.tmdb.org/t/p/original';
+        return `${baseUrl}${path}`
+    }
+</script>
+
 <template>
     <div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-24 lg:overflow-visible lg:px-0">
         <div class="absolute inset-0 -z-10 overflow-hidden">
@@ -50,21 +65,6 @@
     </section>
     </div>
 </template>
-
-<script setup>
-    const route = useRoute();
-    const { data: getDetails } = await useFetch(`https://api.themoviedb.org/3/movie/${route.params.id}?api_key=6dc5c1a78711cf80c5b1fcc9e7340fb9&language=en-US`)
-    const movie = toRaw(getDetails.value)
-
-    const { data: getCredits } = await useFetch(`https://api.themoviedb.org/3/movie/${route.params.id}/credits?api_key=6dc5c1a78711cf80c5b1fcc9e7340fb9&language=en-US`)
-    const credits = toRaw(getCredits.value)
-    console.log(credits.cast)
-
-    function getImageUrl(path) {
-        const baseUrl = 'https://image.tmdb.org/t/p/original';
-        return `${baseUrl}${path}`
-    }
-</script>
 
 <style scoped>
 

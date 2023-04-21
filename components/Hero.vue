@@ -1,3 +1,28 @@
+<script setup>
+  import { ref } from 'vue'
+  
+  const query = ref('')
+  const movies = ref([])
+  
+  const searchMovies = async () => {
+    if (query.value.length < 3) {
+      movies.value = []
+      return
+    }
+  
+    const apiKey = '6dc5c1a78711cf80c5b1fcc9e7340fb9'
+    const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query.value}`)
+    const data = await response.json()
+  
+    movies.value = data.results
+  }
+
+  function getImageUrl(path) {
+        const baseUrl = 'https://image.tmdb.org/t/p/original';
+        return `${baseUrl}${path}`
+    }
+</script>
+
 <template>
     <div class="bg-center bg-no-repeat bg-[url('https://image.tmdb.org/t/p/original//wybmSmviUXxlBmX44gtpow5Y9TB.jpg')] bg-gray-700 bg-blend-multiply">
       <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
@@ -30,31 +55,6 @@
         </section>
     </div>
   </template>
-  
-  <script setup>
-  import { ref } from 'vue'
-  
-  const query = ref('')
-  const movies = ref([])
-  
-  const searchMovies = async () => {
-    if (query.value.length < 3) {
-      movies.value = []
-      return
-    }
-  
-    const apiKey = '6dc5c1a78711cf80c5b1fcc9e7340fb9'
-    const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query.value}`)
-    const data = await response.json()
-  
-    movies.value = data.results
-  }
-
-  function getImageUrl(path) {
-        const baseUrl = 'https://image.tmdb.org/t/p/original';
-        return `${baseUrl}${path}`
-    }
-  </script>
 
 <style scoped>
 .card {
